@@ -7,8 +7,10 @@ namespace Monogame_Tutorial___Textures_and_colors
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        private SpriteBatch spriteBatch;
         Texture2D dinoTexture;
+        Texture2D cityTexture;
+        Texture2D chopperTexture;
 
 
         public Game1()
@@ -31,10 +33,11 @@ namespace Monogame_Tutorial___Textures_and_colors
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
             dinoTexture = Content.Load<Texture2D>("dino");
+            cityTexture = Content.Load<Texture2D>("City");
+            chopperTexture = Content.Load<Texture2D>("Chopper");
         }
 
         protected override void Update(GameTime gameTime)
@@ -49,12 +52,15 @@ namespace Monogame_Tutorial___Textures_and_colors
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.LightGreen);
+            GraphicsDevice.Clear(Color.White);
 
-            _spriteBatch.Begin();
-            _spriteBatch.Draw(dinoTexture, new Vector2 (10, 10), Color.White);
+            spriteBatch.Begin();
 
-            _spriteBatch.End();
+            spriteBatch.Draw(cityTexture, new Vector2 (0, 0), Color.White);
+            spriteBatch.Draw(dinoTexture, new Vector2 (10, 200), Color.White);
+            spriteBatch.Draw(chopperTexture, new Vector2(500, 50), Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
