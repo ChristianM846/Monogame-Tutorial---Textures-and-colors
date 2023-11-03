@@ -11,6 +11,10 @@ namespace Monogame_Tutorial___Textures_and_colors
         Texture2D dinoTexture;
         Texture2D cityTexture;
         Texture2D chopperTexture;
+        Texture2D rocketTexture;
+        Texture2D diagonalRocketTexture;
+        Texture2D tankTexture;
+        Texture2D flameTexture;
 
 
         public Game1()
@@ -37,7 +41,11 @@ namespace Monogame_Tutorial___Textures_and_colors
 
             dinoTexture = Content.Load<Texture2D>("dino");
             cityTexture = Content.Load<Texture2D>("City");
-            chopperTexture = Content.Load<Texture2D>("Chopper");
+            chopperTexture = Content.Load<Texture2D>("Chopper2");
+            rocketTexture = Content.Load<Texture2D>("Rockets");
+            diagonalRocketTexture = Content.Load<Texture2D>("Rocket");
+            tankTexture = Content.Load<Texture2D>("Tank");
+            flameTexture = Content.Load<Texture2D>("Flamethrower");
         }
 
         protected override void Update(GameTime gameTime)
@@ -59,6 +67,10 @@ namespace Monogame_Tutorial___Textures_and_colors
             spriteBatch.Draw(cityTexture, new Vector2 (0, 0), Color.White);
             spriteBatch.Draw(dinoTexture, new Vector2 (10, 200), Color.White);
             spriteBatch.Draw(chopperTexture, new Vector2(500, 50), Color.White);
+            spriteBatch.Draw(rocketTexture, new Vector2(300, 250), Color.White);
+            spriteBatch.Draw(diagonalRocketTexture, new Vector2(250, 200), Color.White);
+            spriteBatch.Draw(tankTexture, new Vector2(450, 350), Color.White);
+            spriteBatch.Draw(flameTexture, new Vector2(175, 450), Color.White);
 
             spriteBatch.End();
 
